@@ -51,10 +51,13 @@
     keyboard.hidden = YES;
     keyboard.passwordH.constant *= scale_w;
     keyboard.keyBtnH.constant *= scale_w;
+    keyboard.bottomY.constant = -[keyboard.boardView getSupH];
     return keyboard;
 }
 
-
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+}
 
 - (void)showKeyboard {
     self.hidden = NO;
